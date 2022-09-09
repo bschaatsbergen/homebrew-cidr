@@ -5,12 +5,12 @@
 class Cidr < Formula
   desc "ntest is a cross-platform cli app that runs multiple tests against any address."
   homepage "https://github.com/bschaatsbergen/cidr"
-  version "0.1.1"
+  version "0.1.2"
   license "MIT"
 
   on_macos do
-    url "https://github.com/bschaatsbergen/cidr/releases/download/v0.1.1/cidr_0.1.1_darwin_amd64.tar.gz"
-    sha256 "e0a6c25488fd5ecee9f1d3b440c195de824a30afec94b68df853af863728238c"
+    url "https://github.com/bschaatsbergen/cidr/releases/download/v0.1.2/cidr_0.1.2_darwin_amd64.tar.gz"
+    sha256 "f991429ac33bca1ae20d146cdf67b2ba5544283f06bb3b25e3d73c678898b591"
 
     def install
       bin.install "cidr"
@@ -29,8 +29,8 @@ class Cidr < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/bschaatsbergen/cidr/releases/download/v0.1.1/cidr_0.1.1_linux_amd64.tar.gz"
-      sha256 "02c05757679166878dcfde747433c6eea4be77ff7d21edf26cb4acd04f1a553c"
+      url "https://github.com/bschaatsbergen/cidr/releases/download/v0.1.2/cidr_0.1.2_linux_amd64.tar.gz"
+      sha256 "d4aa9b629e1ce218b3a7c302cca7da419eae9b24ffb7974139067e27803ff47d"
 
       def install
         bin.install "cidr"
