@@ -5,32 +5,40 @@
 class Cidr < Formula
   desc "A CLI to perform various actions on CIDR ranges"
   homepage "https://github.com/bschaatsbergen/cidr"
-  version "0.1.4"
+  version "1.0.0"
   license "MIT"
 
   on_macos do
-    url "https://github.com/bschaatsbergen/cidr/releases/download/v0.1.4/cidr_0.1.4_darwin_amd64.tar.gz"
-    sha256 "febfceb0692f6ebb9734f6f467c2ca170417d99ee5cb44bdfde161641ab49076"
+    if Hardware::CPU.intel?
+      url "https://github.com/bschaatsbergen/cidr/releases/download/v1.0.0/cidr_1.0.0_darwin_amd64.tar.gz"
+      sha256 "5598feeaf0a496d01995a5e91aaf8e3fd464930927db5e7b68d31cdb3a4fafae"
 
-    def install
-      bin.install "cidr"
+      def install
+        bin.install "cidr"
+      end
     end
-
     if Hardware::CPU.arm?
-      def caveats
-        <<~EOS
-          The darwin_arm64 architecture is not supported for the Cidr
-          formula at this time. The darwin_amd64 binary may work in compatibility
-          mode, but it might not be fully supported.
-        EOS
+      url "https://github.com/bschaatsbergen/cidr/releases/download/v1.0.0/cidr_1.0.0_darwin_arm64.tar.gz"
+      sha256 "5c7533a6ed9f5a36a0f3b26fe5ee61d502e81c65365408768ea9dd788e053ab8"
+
+      def install
+        bin.install "cidr"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/bschaatsbergen/cidr/releases/download/v0.1.4/cidr_0.1.4_linux_amd64.tar.gz"
-      sha256 "c22865e59111538d29936fe6f91087c4c3dc3a24ba9725556ab2e8110148584a"
+      url "https://github.com/bschaatsbergen/cidr/releases/download/v1.0.0/cidr_1.0.0_linux_amd64.tar.gz"
+      sha256 "d7a9e218fadc6cd703d2b37beb8dc85e6f9d8dd9302afcf57979d5a3028d69a5"
+
+      def install
+        bin.install "cidr"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/bschaatsbergen/cidr/releases/download/v1.0.0/cidr_1.0.0_linux_arm64.tar.gz"
+      sha256 "578c21ff3550829b73973d1a5123e176107c174955b91bce6a94671fb9c9d4c6"
 
       def install
         bin.install "cidr"
