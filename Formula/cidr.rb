@@ -11,7 +11,7 @@ class Cidr < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/bschaatsbergen/cidr/releases/download/v1.0.2/cidr_1.0.2_darwin_amd64.tar.gz"
-      sha256 "d662dfc6a62cf1ad315a72c9de5777275482ab0050cba94f4bcf81c0e15965f5"
+      sha256 "bafb9aef40f95d19a1aa6fdcfc2bef97bf27e363b6caa2d40c44375f30a439a9"
 
       def install
         bin.install "cidr"
@@ -19,7 +19,7 @@ class Cidr < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/bschaatsbergen/cidr/releases/download/v1.0.2/cidr_1.0.2_darwin_arm64.tar.gz"
-      sha256 "b6135c3ee4014f10ca1374af0f87ab3c6ce7cfd98919b6bb562360e0f8e2f1af"
+      sha256 "f29d3927185364ae3e2ebfcaa44604051729af023f51c08535106d880fc0c7b2"
 
       def install
         bin.install "cidr"
@@ -30,7 +30,7 @@ class Cidr < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/bschaatsbergen/cidr/releases/download/v1.0.2/cidr_1.0.2_linux_arm64.tar.gz"
-      sha256 "0537c094ccde24cc0791d561a46192fdf0dbb5421069be41b1dd6a75641ca654"
+      sha256 "695b83e774613541af98a1dbef96fd2568678edbf4b58a42503c4548d7578456"
 
       def install
         bin.install "cidr"
@@ -38,7 +38,7 @@ class Cidr < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/bschaatsbergen/cidr/releases/download/v1.0.2/cidr_1.0.2_linux_amd64.tar.gz"
-      sha256 "4ff412b7d7fe7b43bcb7b3809080ba139f20208fd0ef7d5f60d851b578a04afa"
+      sha256 "b0f9d8b6d86fd541d9acc27b34bf2aebc9e33a8149e89ecbe072002943c43710"
 
       def install
         bin.install "cidr"
