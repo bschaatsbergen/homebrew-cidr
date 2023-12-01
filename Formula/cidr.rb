@@ -5,21 +5,21 @@
 class Cidr < Formula
   desc "CLI to perform various actions on CIDR ranges"
   homepage "https://github.com/bschaatsbergen/cidr"
-  version "1.0.2"
+  version "1.1.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/bschaatsbergen/cidr/releases/download/v1.0.2/cidr_1.0.2_darwin_amd64.tar.gz"
-      sha256 "bafb9aef40f95d19a1aa6fdcfc2bef97bf27e363b6caa2d40c44375f30a439a9"
+      url "https://github.com/bschaatsbergen/cidr/releases/download/v1.1.0/cidr_1.1.0_darwin_amd64.tar.gz"
+      sha256 "e6581815569a093db5f848f514cea0cae245e136410f23a67a886dcff9a7ce6f"
 
       def install
         bin.install "cidr"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/bschaatsbergen/cidr/releases/download/v1.0.2/cidr_1.0.2_darwin_arm64.tar.gz"
-      sha256 "f29d3927185364ae3e2ebfcaa44604051729af023f51c08535106d880fc0c7b2"
+      url "https://github.com/bschaatsbergen/cidr/releases/download/v1.1.0/cidr_1.1.0_darwin_arm64.tar.gz"
+      sha256 "bff83f347cd7e43a0f450b3ac5b3b72d0462f110282946bb2cfd293e320a7385"
 
       def install
         bin.install "cidr"
@@ -29,16 +29,16 @@ class Cidr < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bschaatsbergen/cidr/releases/download/v1.0.2/cidr_1.0.2_linux_arm64.tar.gz"
-      sha256 "695b83e774613541af98a1dbef96fd2568678edbf4b58a42503c4548d7578456"
+      url "https://github.com/bschaatsbergen/cidr/releases/download/v1.1.0/cidr_1.1.0_linux_arm64.tar.gz"
+      sha256 "6b02971a026da82c0b78d6c5b393be50d78b4044d51893a97a0489fcb7748809"
 
       def install
         bin.install "cidr"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/bschaatsbergen/cidr/releases/download/v1.0.2/cidr_1.0.2_linux_amd64.tar.gz"
-      sha256 "b0f9d8b6d86fd541d9acc27b34bf2aebc9e33a8149e89ecbe072002943c43710"
+      url "https://github.com/bschaatsbergen/cidr/releases/download/v1.1.0/cidr_1.1.0_linux_amd64.tar.gz"
+      sha256 "b97cce66025cb893149f73e0a4949c11b79a124cd5e800f8bc4f0e19161875e0"
 
       def install
         bin.install "cidr"
