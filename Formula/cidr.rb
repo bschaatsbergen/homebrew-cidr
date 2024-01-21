@@ -5,21 +5,21 @@
 class Cidr < Formula
   desc "CLI to perform various actions on CIDR ranges"
   homepage "https://github.com/bschaatsbergen/cidr"
-  version "1.3.0"
+  version "1.4.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/bschaatsbergen/cidr/releases/download/v1.3.0/cidr_1.3.0_darwin_arm64.tar.gz"
-      sha256 "bc36c85ac1b37d4bc756e1cad0cb9400aa99e25e38c7bd66d62752cc5991a904"
+      url "https://github.com/bschaatsbergen/cidr/releases/download/v1.4.0/cidr_1.4.0_darwin_arm64.tar.gz"
+      sha256 "8f59a8d3531bc6f149a07654f8caad152a296a295931af4a57d8f5a2b16fcd5f"
 
       def install
         bin.install "cidr"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/bschaatsbergen/cidr/releases/download/v1.3.0/cidr_1.3.0_darwin_amd64.tar.gz"
-      sha256 "30eac91a2863c2f6976cb43fbe07fd799be156335a4300e24db837b53294bbee"
+      url "https://github.com/bschaatsbergen/cidr/releases/download/v1.4.0/cidr_1.4.0_darwin_amd64.tar.gz"
+      sha256 "c8ae1e5070c2204dcbeca57392eb92dd15638f33808a51eb58cc3db81bb472c8"
 
       def install
         bin.install "cidr"
@@ -28,17 +28,17 @@ class Cidr < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/bschaatsbergen/cidr/releases/download/v1.3.0/cidr_1.3.0_linux_amd64.tar.gz"
-      sha256 "4db20fdfa57c83502429ddc9656522241853945d9b28e2bffe174dc66ec46e2f"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/bschaatsbergen/cidr/releases/download/v1.4.0/cidr_1.4.0_linux_arm64.tar.gz"
+      sha256 "618c68ae6d41739d46fbd82bd51c9a75eee5aea82b428ff4f906a7f67fec7a93"
 
       def install
         bin.install "cidr"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bschaatsbergen/cidr/releases/download/v1.3.0/cidr_1.3.0_linux_arm64.tar.gz"
-      sha256 "c3898c29375c5ba893e52e261d069fbcc3c9be859a1399f96877fcc3de964fbf"
+    if Hardware::CPU.intel?
+      url "https://github.com/bschaatsbergen/cidr/releases/download/v1.4.0/cidr_1.4.0_linux_amd64.tar.gz"
+      sha256 "a15ba2b39eb69af15749872391a875459b84b1431d3aa018084e58b914dae3a0"
 
       def install
         bin.install "cidr"
