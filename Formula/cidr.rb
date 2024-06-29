@@ -5,21 +5,21 @@
 class Cidr < Formula
   desc "CLI to perform various actions on CIDR ranges"
   homepage "https://github.com/bschaatsbergen/cidr"
-  version "2.0.0"
+  version "2.1.1"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/bschaatsbergen/cidr/releases/download/v2.0.0/cidr_2.0.0_darwin_amd64.tar.gz"
-      sha256 "600b71acc721fc9434bebf4a4ddbbb12553f37afd56d921ed2907c4bd93762b8"
+    on_intel do
+      url "https://github.com/bschaatsbergen/cidr/releases/download/v2.1.1/cidr_2.1.1_darwin_amd64.tar.gz"
+      sha256 "c44f567c0f1003fc121337c3a630dd78e74bb8e5b343d8a00f7dd8d53fa185ca"
 
       def install
         bin.install "cidr"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/bschaatsbergen/cidr/releases/download/v2.0.0/cidr_2.0.0_darwin_arm64.tar.gz"
-      sha256 "916dc113e2afebf1e4c13c9ea5abe61a6445e1de545984a7c3638bba71613558"
+    on_arm do
+      url "https://github.com/bschaatsbergen/cidr/releases/download/v2.1.1/cidr_2.1.1_darwin_arm64.tar.gz"
+      sha256 "5df5ef243458e32280cab406d489d1724412d64da80181791b9902bb840899a5"
 
       def install
         bin.install "cidr"
@@ -28,20 +28,24 @@ class Cidr < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bschaatsbergen/cidr/releases/download/v2.0.0/cidr_2.0.0_linux_arm64.tar.gz"
-      sha256 "2b0143a02dac9e74e5895a8d1c68ace86172eabbc798399a5bdd3fb5505514c0"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/bschaatsbergen/cidr/releases/download/v2.1.1/cidr_2.1.1_linux_amd64.tar.gz"
+        sha256 "03e5a8b7f793f7e01205429a62a6fd212389033cc2f8a46a429102cf70d84416"
 
-      def install
-        bin.install "cidr"
+        def install
+          bin.install "cidr"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/bschaatsbergen/cidr/releases/download/v2.0.0/cidr_2.0.0_linux_amd64.tar.gz"
-      sha256 "3f540127be2820dd24dcf36ea4206593142ee8dc429a05e9f83b449f2b89e5ef"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/bschaatsbergen/cidr/releases/download/v2.1.1/cidr_2.1.1_linux_arm64.tar.gz"
+        sha256 "65de220a8ff9d44bcc67cc070061075b2be46a86872036b3e11e93f8afa922c6"
 
-      def install
-        bin.install "cidr"
+        def install
+          bin.install "cidr"
+        end
       end
     end
   end
